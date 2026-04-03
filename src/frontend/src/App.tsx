@@ -9,6 +9,7 @@ import { CounselorsPage } from "./pages/CounselorsPage";
 import { DashboardPage } from "./pages/DashboardPage";
 import { HomePage } from "./pages/HomePage";
 import { LoginPage } from "./pages/LoginPage";
+import { ProjectReportPage } from "./pages/ProjectReportPage";
 import { RegisterPage } from "./pages/RegisterPage";
 
 export type Page =
@@ -19,7 +20,8 @@ export type Page =
   | "ai-chat"
   | "admin"
   | "login"
-  | "register";
+  | "register"
+  | "project-report";
 
 export default function App() {
   const [page, setPage] = useState<Page>("home");
@@ -45,6 +47,7 @@ export default function App() {
         {page === "admin" && <AdminPage navigate={navigate} />}
         {page === "login" && <LoginPage navigate={navigate} />}
         {page === "register" && <RegisterPage navigate={navigate} />}
+        {page === "project-report" && <ProjectReportPage />}
       </main>
       <Toaster richColors />
     </div>

@@ -32,7 +32,7 @@ export function Navbar({ page, navigate }: NavbarProps) {
         </button>
 
         {/* Nav links */}
-        <nav className="hidden md:flex items-center gap-6">
+        <nav className="hidden md:flex items-center gap-5">
           {(
             [
               ["home", "Home"],
@@ -41,6 +41,7 @@ export function Navbar({ page, navigate }: NavbarProps) {
               ["chat", "Chat"],
               ["ai-chat", "AI Chat"],
               ["admin", "Admin"],
+              ["project-report", "📄 Report"],
             ] as [Page, string][]
           ).map(([p, label]) => (
             <button
