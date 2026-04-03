@@ -49,17 +49,6 @@ export function ProjectReportPage() {
           font-size: 11pt;
           color: #000;
         }
-        .page-footer {
-          position: absolute;
-          bottom: 10mm;
-          left: 25mm;
-          right: 20mm;
-          border-top: 1px solid #000;
-          padding-top: 4px;
-          display: flex;
-          justify-content: space-between;
-          font-size: 9pt;
-        }
         .chapter-title {
           font-size: 13pt;
           font-weight: bold;
@@ -199,10 +188,6 @@ export function ProjectReportPage() {
               </p>
             </div>
           </div>
-          <div className="page-footer">
-            <span>MODERN GROUP OF COLLEGES</span>
-            <span>Roll No.-2326268</span>
-          </div>
         </div>
 
         {/* PAGE 2: INNER TITLE */}
@@ -285,10 +270,6 @@ export function ProjectReportPage() {
               </strong>
             </p>
           </div>
-          <div className="page-footer">
-            <span>MODERN GROUP OF COLLEGES</span>
-            <span>Roll No.-2326268</span>
-          </div>
         </div>
 
         {/* PAGE 3: CERTIFICATE */}
@@ -357,10 +338,6 @@ export function ProjectReportPage() {
               </div>
             ))}
           </div>
-          <div className="page-footer">
-            <span>MODERN GROUP OF COLLEGES</span>
-            <span>Roll No.-2326268 &nbsp; Page No. | 1</span>
-          </div>
         </div>
 
         {/* PAGE 4: DECLARATION */}
@@ -424,10 +401,6 @@ export function ProjectReportPage() {
             <br />
             SIXTH Semester
           </p>
-          <div className="page-footer">
-            <span>MODERN GROUP OF COLLEGES</span>
-            <span>Roll No.-2326268 &nbsp; Page No. | 2</span>
-          </div>
         </div>
 
         {/* PAGE 5: ACKNOWLEDGEMENT */}
@@ -489,10 +462,6 @@ export function ProjectReportPage() {
             <p>
               B. Tech (CSE) 6<sup>th</sup> Sem
             </p>
-          </div>
-          <div className="page-footer">
-            <span>MODERN GROUP OF COLLEGES</span>
-            <span>Roll No.-2326268 &nbsp; Page No. | 3</span>
           </div>
         </div>
 
@@ -557,10 +526,6 @@ export function ProjectReportPage() {
             Computer Protocol, Blockchain, AI Counselor, React.js, Motoko,
             Chatbot, College Students, Counselor Management.
           </p>
-          <div className="page-footer">
-            <span>MODERN GROUP OF COLLEGES</span>
-            <span>Roll No.-2326268 &nbsp; Page No. | 4</span>
-          </div>
         </div>
 
         {/* PAGE 7: TABLE OF CONTENTS */}
@@ -696,10 +661,6 @@ export function ProjectReportPage() {
               ))}
             </tbody>
           </table>
-          <div className="page-footer">
-            <span>MODERN GROUP OF COLLEGES</span>
-            <span>Roll No.-2326268 &nbsp; Page No. | 5</span>
-          </div>
         </div>
 
         {/* PAGE 8: CHAPTER 1 INTRODUCTION */}
@@ -759,10 +720,6 @@ export function ProjectReportPage() {
             TypeScript, and Tailwind CSS on the frontend, and Motoko smart
             contracts on the backend.
           </p>
-          <div className="page-footer">
-            <span>MODERN GROUP OF COLLEGES</span>
-            <span>Roll No.-2326268 &nbsp; Page No. | 6</span>
-          </div>
         </div>
 
         {/* PAGE 9: 1.2 OBJECTIVES */}
@@ -834,10 +791,6 @@ export function ProjectReportPage() {
               horizontal scaling.
             </li>
           </ol>
-          <div className="page-footer">
-            <span>MODERN GROUP OF COLLEGES</span>
-            <span>Roll No.-2326268 &nbsp; Page No. | 7</span>
-          </div>
         </div>
 
         {/* PAGE 10: 1.3 EXISTING SYSTEM */}
@@ -923,10 +876,6 @@ export function ProjectReportPage() {
               health guidance at any time.
             </li>
           </ul>
-          <div className="page-footer">
-            <span>MODERN GROUP OF COLLEGES</span>
-            <span>Roll No.-2326268 &nbsp; Page No. | 8</span>
-          </div>
         </div>
 
         {/* PAGE 11: 1.4 PROPOSED SYSTEM */}
@@ -995,10 +944,6 @@ export function ProjectReportPage() {
               optimized for college students on all devices.
             </li>
           </ul>
-          <div className="page-footer">
-            <span>MODERN GROUP OF COLLEGES</span>
-            <span>Roll No.-2326268 &nbsp; Page No. | 9</span>
-          </div>
         </div>
 
         {/* PAGE 12: 1.5 SCOPE + 1.6 ADV */}
@@ -1096,10 +1041,6 @@ export function ProjectReportPage() {
               which may be insufficient for severe mental health cases.
             </li>
           </ul>
-          <div className="page-footer">
-            <span>MODERN GROUP OF COLLEGES</span>
-            <span>Roll No.-2326268 &nbsp; Page No. | 10</span>
-          </div>
         </div>
 
         {/* PAGE 13: CHAPTER 2 TOOLS */}
@@ -1167,10 +1108,6 @@ export function ProjectReportPage() {
               ))}
             </tbody>
           </table>
-          <div className="page-footer">
-            <span>MODERN GROUP OF COLLEGES</span>
-            <span>Roll No.-2326268 &nbsp; Page No. | 11</span>
-          </div>
         </div>
 
         {/* PAGE 14: 2.3 LANGUAGES */}
@@ -1230,10 +1167,6 @@ export function ProjectReportPage() {
             eliminating the need for traditional cloud hosting services like AWS
             or Firebase.
           </p>
-          <div className="page-footer">
-            <span>MODERN GROUP OF COLLEGES</span>
-            <span>Roll No.-2326268 &nbsp; Page No. | 12</span>
-          </div>
         </div>
 
         {/* PAGE 15: CHAPTER 3 FEASIBILITY */}
@@ -1332,10 +1265,6 @@ export function ProjectReportPage() {
               operational needs evolve.
             </li>
           </ul>
-          <div className="page-footer">
-            <span>MODERN GROUP OF COLLEGES</span>
-            <span>Roll No.-2326268 &nbsp; Page No. | 13-15</span>
-          </div>
         </div>
 
         {/* PAGE 16: CHAPTER 4 MODULES ADMIN */}
@@ -1386,10 +1315,6 @@ export function ProjectReportPage() {
             administrators assess platform engagement and identify areas for
             improvement.
           </p>
-          <div className="page-footer">
-            <span>MODERN GROUP OF COLLEGES</span>
-            <span>Roll No.-2326268 &nbsp; Page No. | 16</span>
-          </div>
         </div>
 
         {/* PAGE 17: MODULES STUDENT + AI */}
@@ -1466,10 +1391,6 @@ export function ProjectReportPage() {
               message.
             </li>
           </ul>
-          <div className="page-footer">
-            <span>MODERN GROUP OF COLLEGES</span>
-            <span>Roll No.-2326268 &nbsp; Page No. | 17-18</span>
-          </div>
         </div>
 
         {/* PAGE 18: CHAPTER 5 DFD */}
@@ -1599,10 +1520,6 @@ export function ProjectReportPage() {
               <strong>ICP Blockchain (Data Store)</strong> — Student Profiles |
               Counselors | Chat Messages | Assignments
             </div>
-          </div>
-          <div className="page-footer">
-            <span>MODERN GROUP OF COLLEGES</span>
-            <span>Roll No.-2326268 &nbsp; Page No. | 19</span>
           </div>
         </div>
 
@@ -1767,10 +1684,6 @@ export function ProjectReportPage() {
               </div>
             </div>
           </div>
-          <div className="page-footer">
-            <span>MODERN GROUP OF COLLEGES</span>
-            <span>Roll No.-2326268 &nbsp; Page No. | 20</span>
-          </div>
         </div>
 
         {/* PAGE 20: ER DIAGRAM */}
@@ -1874,10 +1787,6 @@ export function ProjectReportPage() {
               <strong>AI_SESSIONS</strong> (1:N)
             </li>
           </ul>
-          <div className="page-footer">
-            <span>MODERN GROUP OF COLLEGES</span>
-            <span>Roll No.-2326268 &nbsp; Page No. | 21</span>
-          </div>
         </div>
 
         {/* PAGE 21-24: SCREENSHOTS */}
@@ -1979,10 +1888,6 @@ export function ProjectReportPage() {
                 <p className="fig-caption">{caption}</p>
               </div>
             ))}
-            <div className="page-footer">
-              <span>MODERN GROUP OF COLLEGES</span>
-              <span>Roll No.-2326268 &nbsp; Page No. | {pg}</span>
-            </div>
           </div>
         ))}
 
@@ -2078,10 +1983,6 @@ export function ProjectReportPage() {
               ))}
             </tbody>
           </table>
-          <div className="page-footer">
-            <span>MODERN GROUP OF COLLEGES</span>
-            <span>Roll No.-2326268 &nbsp; Page No. | 26</span>
-          </div>
         </div>
 
         <div className="page">
@@ -2215,10 +2116,6 @@ export function ProjectReportPage() {
               ))}
             </tbody>
           </table>
-          <div className="page-footer">
-            <span>MODERN GROUP OF COLLEGES</span>
-            <span>Roll No.-2326268 &nbsp; Page No. | 27</span>
-          </div>
         </div>
 
         {/* PAGE 27: CONCLUSION */}
@@ -2288,10 +2185,6 @@ export function ProjectReportPage() {
             college environments and can serve as a model for digital mental
             health support systems in educational institutions.
           </p>
-          <div className="page-footer">
-            <span>MODERN GROUP OF COLLEGES</span>
-            <span>Roll No.-2326268 &nbsp; Page No. | 28</span>
-          </div>
         </div>
 
         {/* PAGE 28: APPLICATIONS */}
@@ -2355,10 +2248,6 @@ export function ProjectReportPage() {
               sophisticated AI counseling systems.
             </li>
           </ul>
-          <div className="page-footer">
-            <span>MODERN GROUP OF COLLEGES</span>
-            <span>Roll No.-2326268 &nbsp; Page No. | 29</span>
-          </div>
         </div>
 
         {/* PAGE 29: FUTURE SCOPE */}
@@ -2424,10 +2313,6 @@ export function ProjectReportPage() {
             counselors, administrators, and researchers, providing unprecedented
             data privacy controls.
           </p>
-          <div className="page-footer">
-            <span>MODERN GROUP OF COLLEGES</span>
-            <span>Roll No.-2326268 &nbsp; Page No. | 30</span>
-          </div>
         </div>
 
         {/* PAGE 30: REFERENCES */}
@@ -2510,10 +2395,6 @@ export function ProjectReportPage() {
               . ACHA.
             </li>
           </ol>
-          <div className="page-footer">
-            <span>MODERN GROUP OF COLLEGES</span>
-            <span>Roll No.-2326268 &nbsp; Page No. | 31</span>
-          </div>
         </div>
 
         {/* PAGE 31: SYSTEM ARCHITECTURE */}
@@ -2651,10 +2532,6 @@ export function ProjectReportPage() {
               ))}
             </tbody>
           </table>
-          <div className="page-footer">
-            <span>MODERN GROUP OF COLLEGES</span>
-            <span>Roll No.-2326268 &nbsp; Page No. | 32</span>
-          </div>
         </div>
 
         {/* PAGE 32: AI CATEGORIES */}
@@ -2798,10 +2675,6 @@ export function ProjectReportPage() {
               ))}
             </tbody>
           </table>
-          <div className="page-footer">
-            <span>MODERN GROUP OF COLLEGES</span>
-            <span>Roll No.-2326268 &nbsp; Page No. | 33</span>
-          </div>
         </div>
 
         {/* PAGE 33: GLOSSARY */}
@@ -2898,10 +2771,6 @@ export function ProjectReportPage() {
               ))}
             </tbody>
           </table>
-          <div className="page-footer">
-            <span>MODERN GROUP OF COLLEGES</span>
-            <span>Roll No.-2326268 &nbsp; Page No. | 34</span>
-          </div>
         </div>
 
         {/* PAGE 34: BIBLIOGRAPHY */}
@@ -2988,10 +2857,6 @@ export function ProjectReportPage() {
             </p>
             <p>Date: ____________________</p>
           </div>
-          <div className="page-footer">
-            <span>MODERN GROUP OF COLLEGES</span>
-            <span>Roll No.-2326268 &nbsp; Page No. | 35</span>
-          </div>
         </div>
 
         {/* PAGE 35: END PAGE */}
@@ -3046,10 +2911,6 @@ export function ProjectReportPage() {
             <p style={{ marginTop: "30px", fontSize: "11pt" }}>
               Total Pages: 35 | Chapters: 10 | Appendices: 4
             </p>
-          </div>
-          <div className="page-footer">
-            <span>MODERN GROUP OF COLLEGES</span>
-            <span>Roll No.-2326268 &nbsp; Page No. | 35</span>
           </div>
         </div>
       </div>
