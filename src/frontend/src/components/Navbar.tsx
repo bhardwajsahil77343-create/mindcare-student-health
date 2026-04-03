@@ -39,12 +39,14 @@ export function Navbar({ page, navigate }: NavbarProps) {
               ["counselors", "Counselors"],
               ["dashboard", "Dashboard"],
               ["chat", "Chat"],
+              ["ai-chat", "AI Chat"],
               ["admin", "Admin"],
             ] as [Page, string][]
           ).map(([p, label]) => (
             <button
               type="button"
               key={p}
+              data-ocid={`nav.${p.replace("-", "_")}.link`}
               onClick={() => navigate(p)}
               className={`text-sm font-medium transition-colors ${
                 page === p

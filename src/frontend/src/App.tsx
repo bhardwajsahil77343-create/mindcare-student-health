@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Navbar } from "./components/Navbar";
 import { Toaster } from "./components/ui/sonner";
 import { useInternetIdentity } from "./hooks/useInternetIdentity";
+import { AIChatbotPage } from "./pages/AIChatbotPage";
 import { AdminPage } from "./pages/AdminPage";
 import { ChatPage } from "./pages/ChatPage";
 import { CounselorsPage } from "./pages/CounselorsPage";
@@ -15,6 +16,7 @@ export type Page =
   | "counselors"
   | "dashboard"
   | "chat"
+  | "ai-chat"
   | "admin"
   | "login"
   | "register";
@@ -39,6 +41,7 @@ export default function App() {
         {page === "counselors" && <CounselorsPage navigate={navigate} />}
         {page === "dashboard" && <DashboardPage navigate={navigate} />}
         {page === "chat" && <ChatPage navigate={navigate} />}
+        {page === "ai-chat" && <AIChatbotPage navigate={navigate} />}
         {page === "admin" && <AdminPage navigate={navigate} />}
         {page === "login" && <LoginPage navigate={navigate} />}
         {page === "register" && <RegisterPage navigate={navigate} />}
