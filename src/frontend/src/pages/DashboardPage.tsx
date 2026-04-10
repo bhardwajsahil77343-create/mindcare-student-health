@@ -1,9 +1,9 @@
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { toast } from "sonner";
 import type { Page } from "../App";
-import type { CheckupReminder, Counselor } from "../backend";
 import { useActor } from "../hooks/useActor";
 import { useInternetIdentity } from "../hooks/useInternetIdentity";
+import type { CheckupReminder, Counselor } from "../types/appTypes";
 
 interface Props {
   navigate: (p: Page) => void;

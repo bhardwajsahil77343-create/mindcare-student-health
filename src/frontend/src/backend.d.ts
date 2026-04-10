@@ -45,18 +45,17 @@ export enum UserRole {
 }
 export interface backendInterface {
     addCounselor(counselor: Counselor): Promise<bigint>;
-    assignCallerUserRole(user: Principal, role: UserRole): Promise<void>;
     assignCounselor(counselorId: bigint): Promise<void>;
+    assignRole(user: Principal, role: UserRole): Promise<void>;
     getCallerUserProfile(): Promise<UserProfile | null>;
-    getCallerUserRole(): Promise<UserRole>;
     getCounselor(id: bigint): Promise<Counselor>;
     getMessages(withPrincipal: Principal): Promise<Array<ChatMessage>>;
     getMyAssignment(): Promise<bigint | null>;
     getMyProfile(): Promise<StudentProfile>;
     getMyReminder(): Promise<CheckupReminder>;
     getUserProfile(user: Principal): Promise<UserProfile | null>;
+    getUserRole(): Promise<UserRole>;
     initializeUser(): Promise<void>;
-    isCallerAdmin(): Promise<boolean>;
     listCounselors(): Promise<Array<Counselor>>;
     registerStudent(name: string, email: string): Promise<void>;
     removeCounselor(id: bigint): Promise<void>;

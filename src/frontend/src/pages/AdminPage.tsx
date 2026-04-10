@@ -2,9 +2,9 @@ import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { useState } from "react";
 import { toast } from "sonner";
 import type { Page } from "../App";
-import type { Counselor } from "../backend";
 import { useActor } from "../hooks/useActor";
 import { useInternetIdentity } from "../hooks/useInternetIdentity";
+import type { Counselor } from "../types/appTypes";
 
 interface Props {
   navigate: (p: Page) => void;
@@ -167,17 +167,18 @@ export function AdminPage({ navigate }: Props) {
                 "photoUrl",
               ] as (keyof typeof form)[]
             ).map((field) => (
-              <div key={field}>
+              <div key={String(field)}>
                 <label
-                  htmlFor={`field-${field}`}
+                  htmlFor={`field-${String(field)}`}
                   className="block text-sm font-medium text-[#3A3A3A] mb-1"
                 >
                   {field === "photoUrl"
                     ? "Photo URL (optional)"
-                    : field.charAt(0).toUpperCase() + field.slice(1)}
+                    : String(field).charAt(0).toUpperCase() +
+                      String(field).slice(1)}
                 </label>
                 <input
-                  id={`field-${field}`}
+                  id={`field-${String(field)}`}
                   type={field === "photoUrl" ? "url" : "text"}
                   value={form[field] as string}
                   onChange={(e) =>

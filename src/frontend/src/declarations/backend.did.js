@@ -46,12 +46,10 @@ export const CheckupReminder = IDL.Record({
 });
 
 export const idlService = IDL.Service({
-  '_initializeAccessControlWithSecret' : IDL.Func([IDL.Text], [], []),
   'addCounselor' : IDL.Func([Counselor], [IDL.Nat], []),
-  'assignCallerUserRole' : IDL.Func([IDL.Principal, UserRole], [], []),
   'assignCounselor' : IDL.Func([IDL.Nat], [], []),
+  'assignRole' : IDL.Func([IDL.Principal, UserRole], [], []),
   'getCallerUserProfile' : IDL.Func([], [IDL.Opt(UserProfile)], ['query']),
-  'getCallerUserRole' : IDL.Func([], [UserRole], ['query']),
   'getCounselor' : IDL.Func([IDL.Nat], [Counselor], ['query']),
   'getMessages' : IDL.Func([IDL.Principal], [IDL.Vec(ChatMessage)], ['query']),
   'getMyAssignment' : IDL.Func([], [IDL.Opt(IDL.Nat)], ['query']),
@@ -62,8 +60,8 @@ export const idlService = IDL.Service({
       [IDL.Opt(UserProfile)],
       ['query'],
     ),
+  'getUserRole' : IDL.Func([], [UserRole], ['query']),
   'initializeUser' : IDL.Func([], [], []),
-  'isCallerAdmin' : IDL.Func([], [IDL.Bool], ['query']),
   'listCounselors' : IDL.Func([], [IDL.Vec(Counselor)], ['query']),
   'registerStudent' : IDL.Func([IDL.Text, IDL.Text], [], []),
   'removeCounselor' : IDL.Func([IDL.Nat], [], []),
@@ -112,12 +110,10 @@ export const idlFactory = ({ IDL }) => {
   });
   
   return IDL.Service({
-    '_initializeAccessControlWithSecret' : IDL.Func([IDL.Text], [], []),
     'addCounselor' : IDL.Func([Counselor], [IDL.Nat], []),
-    'assignCallerUserRole' : IDL.Func([IDL.Principal, UserRole], [], []),
     'assignCounselor' : IDL.Func([IDL.Nat], [], []),
+    'assignRole' : IDL.Func([IDL.Principal, UserRole], [], []),
     'getCallerUserProfile' : IDL.Func([], [IDL.Opt(UserProfile)], ['query']),
-    'getCallerUserRole' : IDL.Func([], [UserRole], ['query']),
     'getCounselor' : IDL.Func([IDL.Nat], [Counselor], ['query']),
     'getMessages' : IDL.Func(
         [IDL.Principal],
@@ -132,8 +128,8 @@ export const idlFactory = ({ IDL }) => {
         [IDL.Opt(UserProfile)],
         ['query'],
       ),
+    'getUserRole' : IDL.Func([], [UserRole], ['query']),
     'initializeUser' : IDL.Func([], [], []),
-    'isCallerAdmin' : IDL.Func([], [IDL.Bool], ['query']),
     'listCounselors' : IDL.Func([], [IDL.Vec(Counselor)], ['query']),
     'registerStudent' : IDL.Func([IDL.Text, IDL.Text], [], []),
     'removeCounselor' : IDL.Func([IDL.Nat], [], []),

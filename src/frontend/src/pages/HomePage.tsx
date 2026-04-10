@@ -1,8 +1,8 @@
 import { useQuery } from "@tanstack/react-query";
 import { useEffect, useState } from "react";
 import type { Page } from "../App";
-import type { Counselor } from "../backend";
 import { useActor } from "../hooks/useActor";
+import type { Counselor } from "../types/appTypes";
 
 interface Props {
   navigate: (p: Page) => void;

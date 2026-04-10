@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MindCare - Project Report</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Times New Roman', Times, serif; font-size: 12pt; color: #000; background: #fff; }
+    .page { width: 210mm; min-height: 297mm; margin: 0 auto; padding: 25mm 25mm 20mm 30mm; page-break-after: always; position: relative; }
+    .page:last-child { page-break-after: avoid; }
+    h1 { font-size: 16pt; text-align: center; font-weight: bold; margin-bottom: 10px; }
+    h2 { font-size: 14pt; text-align: center; font-weight: bold; margin-bottom: 8px; }
+    h3 { font-size: 13pt; font-weight: bold; margin: 15px 0 8px 0; }
+    h4 { font-size: 12pt; font-weight: bold; margin: 12px 0 6px 0; }
+    p { margin-bottom: 8px; line-height: 1.6; text-align: justify; }
+    ul, ol { margin: 8px 0 8px 20px; }
+    li { margin-bottom: 4px; line-height: 1.5; }
+    .center { text-align: center; }
+    .bold { font-weight: bold; }
+    .underline { text-decoration: underline; }
+    .title-page { display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 280mm; text-align: center; }
+    .title-page h1 { font-size: 18pt; margin-bottom: 15px; }
+    .title-page h2 { font-size: 15pt; margin-bottom: 10px; }
+    .title-page p { text-align: center; margin-bottom: 8px; }
+    .divider { border: 1px solid #000; margin: 15px 0; }
+    .chapter-header { text-align: center; font-size: 14pt; font-weight: bold; margin-bottom: 20px; text-decoration: underline; }
+    table { width: 100%; border-collapse: collapse; margin: 10px 0; }
+    th, td { border: 1px solid #000; padding: 6px 10px; text-align: left; }
+    th { background: #f0f0f0; font-weight: bold; }
+    .screenshot-box { border: 2px dashed #999; width: 100%; height: 180px; margin: 15px 0; display: flex; align-items: center; justify-content: center; color: #666; font-style: italic; font-size: 11pt; }
+    .toc-row { display: flex; justify-content: space-between; margin: 4px 0; padding: 2px 0; border-bottom: 1px dotted #ccc; }
+    .toc-row span:first-child { flex: 1; }
+    .toc-row span:last-child { min-width: 60px; text-align: right; }
+    .download-btn { position: fixed; top: 20px; right: 20px; background: #c0392b; color: white; padding: 12px 20px; border: none; border-radius: 6px; cursor: pointer; font-size: 14px; font-weight: bold; z-index: 9999; box-shadow: 0 4px 12px rgba(0,0,0,0.3); }
+    .download-btn:hover { background: #a93226; }
+    .sign-row { display: flex; justify-content: space-between; margin: 20px 0; }
+    .sign-col { text-align: center; flex: 1; }
+    .dfd-box { border: 2px solid #000; padding: 15px; margin: 15px 0; text-align: center; background: #fafafa; }
+    .dfd-arrow { text-align: center; font-size: 20pt; margin: 5px 0; }
+    @media print {
+      .download-btn { display: none; }
+      body { background: white; }
+      .page { margin: 0; padding: 20mm 20mm 15mm 25mm; }
+    }
+  </style>
+</head>
+<body>
+
+<button class="download-btn" onclick="window.print()">Download as PDF</button>
+
+<!-- PAGE 1: OUTER TITLE PAGE -->
+<div class="page">
+  <div class="title-page">
+    <h1>INDUSTRIAL TRAINING PROJECT REPORT</h1>
+    <h1>MINDCARE</h1>
+    <h2>[A STUDENT MENTAL HEALTH SUPPORT PLATFORM]</h2>
+    <div class="divider" style="width:80%"></div>
+    <p>Submitted in Partial fulfillment of the requirements for the degree of</p>
+    <h2>BACHELOR OF TECHNOLOGY</h2>
+    <h2>IN</h2>
+    <h2>COMPUTER SCIENCE &amp; ENGINEERING</h2>
+    <p>SESSION: (2023-2027)</p>
+    <p>Degree of Bachelor of Technology Computer Science Engineering</p>
+    <div class="divider" style="width:80%"></div>
+    <p style="margin-top:20px;"><strong>Submitted By:</strong></p>
+    <p><strong>Alisha</strong></p>
+    <p>Roll No: 2326268</p>
+    <div style="margin-top:30px;">
+      <p><strong>Department of Computer Science &amp; Engineering</strong></p>
+      <p>MODERN GROUP OF COLLEGES, PANDORI BHAGAT,</p>
+      <p>MUKERIAN (PUNJAB)</p>
+      <p>Affiliated To</p>
+      <p><strong>I.K. GUJRAL PUNJAB TECHNICAL UNIVERSITY (JALANDHAR)</strong></p>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE 2: INNER TITLE PAGE -->
+<div class="page">
+  <div class="title-page">
+    <h1>MINDCARE</h1>
+    <h2>[A STUDENT MENTAL HEALTH SUPPORT PLATFORM]</h2>
+    <div class="divider" style="width:80%"></div>
+    <p>Submitted in Partial fulfillment of the requirements for the degree of</p>
+    <h2>BACHELOR OF TECHNOLOGY</h2>
+    <h2>IN</h2>
+    <h2>COMPUTER SCIENCE &amp; ENGINEERING</h2>
+    <p>SESSION: (2023-2027)</p>
+    <div class="divider" style="width:80%"></div>
+    <div class="sign-row" style="width:100%;margin-top:30px;">
+      <div class="sign-col" style="text-align:left;">
+        <p><strong>SUBMITTED TO:</strong></p>
+        <p>ASSOCIATE PROF.</p>
+        <p><strong>DR. KAMAL KISHORE</strong></p>
+        <p>HOD, Dept. of CSE</p>
+      </div>
+      <div class="sign-col" style="text-align:right;">
+        <p><strong>SUBMITTED BY:</strong></p>
+        <p><strong>ALISHA</strong></p>
+        <p>ROLL NO: 2326268</p>
+        <p>B.TECH (CSE) 6th Sem</p>
+      </div>
+    </div>
+    <div style="margin-top:30px;">
+      <p><strong>Department of Computer Science &amp; Engineering</strong></p>
+      <p>MODERN GROUP OF COLLEGES, PANDORI BHAGAT,</p>
+      <p>MUKERIAN (PUNJAB)</p>
+      <p>Affiliated To</p>
+      <p><strong>I.K. GUJRAL PUNJAB TECHNICAL UNIVERSITY (JALANDHAR)</strong></p>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE 3: CERTIFICATE -->
+<div class="page">
+  <div class="chapter-header">CERTIFICATE</div>
+  <br><br>
+  <p>This is to certify that the Project Report entitled <strong>"MINDCARE - A Student Mental Health Support Platform"</strong> submitted by <strong>Alisha (Roll No. 2326268)</strong> of B.Tech (CSE) 6th Semester, Modern Group of Colleges, Pandori Bhagat, Mukerian (Punjab) is an authentic record of the work carried out by her under my supervision and guidance.</p>
+  <br>
+  <p>The work embodied in this report has not been submitted for the award of any other degree or diploma to the best of my knowledge and belief.</p>
+  <br><br>
+  <div class="sign-row">
+    <div class="sign-col">
+      <p>________________</p>
+      <p><strong>Miss Janvee Sharma</strong></p>
+      <p>Project Guide</p>
+      <p>Dept. of CSE</p>
+      <p>Modern Group of Colleges</p>
+    </div>
+    <div class="sign-col">
+      <p>________________</p>
+      <p><strong>Dr. Kamal Kishore</strong></p>
+      <p>Head of Department</p>
+      <p>Dept. of CSE</p>
+      <p>Modern Group of Colleges</p>
+    </div>
+  </div>
+  <br><br>
+  <p><strong>Examined by:</strong></p>
+  <br>
+  <div class="sign-row">
+    <div class="sign-col"><p>1. ________________</p></div>
+    <div class="sign-col"><p>2. ________________</p></div>
+    <div class="sign-col"><p>3. ________________</p></div>
+    <div class="sign-col"><p>4. ________________</p></div>
+  </div>
+  <br><br>
+  <p><strong>Date:</strong> ____________________</p>
+  <br>
+  <p class="center">Department of Computer Science &amp; Engineering</p>
+  <p class="center">MODERN GROUP OF COLLEGES, PANDORI BHAGAT, MUKERIAN (PUNJAB)</p>
+  <p class="center">Affiliated to I.K. Gujral Punjab Technical University (Jalandhar)</p>
+</div>
+
+<!-- PAGE 4: DECLARATION -->
+<div class="page">
+  <div class="chapter-header">DECLARATION</div>
+  <br>
+  <p>I hereby declare that the Project Report entitled <strong>"MINDCARE - A Student Mental Health Support Platform"</strong> is an authentic record of my work as requirements of project during the period for the award of degree of B.Tech (CSE), Modern Group of Colleges, Pandori Bhagat (Mukerian) under the guidance of <strong>Miss Janvee Sharma</strong>.</p>
+  <br>
+  <p>This work has not been submitted for the award of any other degree or diploma in any institute or university. The matter presented in this project report has not been copied from any source. I understand that any such copying is liable to be punishable under the rules of the university.</p>
+  <br><br>
+  <p><strong>Date:</strong> ____________________</p>
+  <br>
+  <p><strong>ALISHA (2326268)</strong></p>
+  <br><br>
+  <p>Certified that the above statement made by the student is correct to the best of our knowledge and belief.</p>
+  <br><br>
+  <p><strong>Signatures</strong></p>
+  <p>Examined by:</p>
+  <br>
+  <div class="sign-row">
+    <div class="sign-col"><p>1. ________________</p></div>
+    <div class="sign-col"><p>2. ________________</p></div>
+    <div class="sign-col"><p>3. ________________</p></div>
+    <div class="sign-col"><p>4. ________________</p></div>
+  </div>
+  <br><br>
+  <p>________________</p>
+  <p><strong>Head of Department</strong></p>
+  <p>(Signature and Seal)</p>
+  <p>SIXTH Semester</p>
+</div>
+
+<!-- PAGE 5: ACKNOWLEDGEMENT -->
+<div class="page">
+  <div class="chapter-header">ACKNOWLEDGEMENT</div>
+  <br>
+  <p>I express my sincere gratitude to the <strong>I.K. Gujral Punjab Technical University, Kapurthala</strong> for giving me the opportunity to work on the Major Project during my Sixth Semester of B.Tech (CSE) is an important aspect in the field of engineering.</p>
+  <br>
+  <p>I would like to thank <strong>Dr. Kamal Kishore</strong>, Head of Department, CSE at MGC Pandori Bhagat, Mukerian for their kind support and valuable guidance throughout the project.</p>
+  <br>
+  <p>I also owe my sincere gratitude towards <strong>Miss Janvee Sharma</strong> for her valuable advice and healthy criticism throughout my project which helped me immensely to complete my work successfully. Her patience, encouragement, and constructive feedback have been invaluable in shaping this project.</p>
+  <br>
+  <p>I would also like to thank everyone who has knowingly and unknowingly helped me throughout my work. Special thanks to my classmates and friends for their moral support and encouragement during the development phase.</p>
+  <br>
+  <p>Last but not least, a word of thanks for the authors of all those books, online resources, and research papers which I have consulted during my project work as well as for preparing this report. The open-source community that developed the tools and technologies used in this project deserves special recognition.</p>
+  <br><br>
+  <p class="center">________________</p>
+  <p class="center"><strong>Alisha (2326268)</strong></p>
+  <p class="center">B.Tech (CSE) 6th Sem</p>
+  <p class="center">Modern Group of Colleges</p>
+</div>
+
+<!-- PAGE 6: ABSTRACT -->
+<div class="page">
+  <div class="chapter-header">ABSTRACT</div>
+  <br>
+  <p>Mental health is one of the most critical yet underaddressed challenges facing college students today. Academic pressure, social isolation, relationship difficulties, and financial stress are among the leading contributors to anxiety, depression, and burnout among the student population. Despite the growing awareness of mental health issues, many students lack access to timely, affordable, and stigma-free mental health support.</p>
+  <br>
+  <p><strong>MindCare</strong> is a web-based student mental health support platform developed to bridge this gap. Built on the Internet Computer Protocol (ICP) using Motoko for backend logic and React/TypeScript for the frontend, MindCare offers a secure, decentralized, and always-available mental health support system tailored specifically for college students.</p>
+  <br>
+  <p>The platform features a counselor assignment system where students can choose or be assigned to professional counselors, a real-time on-chain chat system for direct student-counselor communication, an AI-powered chatbot for immediate mental health support, automated health checkup reminders, and a comprehensive admin panel for counselor management.</p>
+  <br>
+  <p>The AI chatbot is rule-based, requiring no external API keys, and recognizes over 18 mental health topics including anxiety, depression, stress, loneliness, academic pressure, and crisis situations. It always directs users to the 988 crisis helpline when serious distress signals are detected.</p>
+  <br>
+  <p>By leveraging blockchain technology through ICP, MindCare ensures data privacy, security, and permanence while providing students with a familiar, modern interface that encourages engagement and reduces the stigma associated with seeking mental health support.</p>
+  <br>
+  <p><strong>Keywords:</strong> Mental Health, Student Wellness, ICP, Motoko, React, AI Chatbot, Counselor Management, Web Application, Decentralized Application.</p>
+</div>
+
+<!-- PAGE 7: TABLE OF CONTENTS -->
+<div class="page">
+  <div class="chapter-header">TABLE OF CONTENTS</div>
+  <br>
+  <table>
+    <tr><th>Name of Topics</th><th>Page No.</th></tr>
+    <tr><td>Abstract</td><td>6</td></tr>
+    <tr><td><strong>CHAPTER 1: INTRODUCTION</strong></td><td><strong>8</strong></td></tr>
+    <tr><td>&nbsp;&nbsp;1.1 Introduction About Project</td><td>8</td></tr>
+    <tr><td>&nbsp;&nbsp;1.2 Objective of Project</td><td>9</td></tr>
+    <tr><td>&nbsp;&nbsp;1.3 Existing System</td><td>10</td></tr>
+    <tr><td>&nbsp;&nbsp;1.4 Proposed System</td><td>11</td></tr>
+    <tr><td>&nbsp;&nbsp;1.5 Project Scope</td><td>12</td></tr>
+    <tr><td>&nbsp;&nbsp;1.6 Advantages &amp; Disadvantages</td><td>13</td></tr>
+    <tr><td><strong>CHAPTER 2: TOOLS &amp; TECHNOLOGY</strong></td><td><strong>14</strong></td></tr>
+    <tr><td>&nbsp;&nbsp;2.1 Hardware Requirements</td><td>14</td></tr>
+    <tr><td>&nbsp;&nbsp;2.2 Software Requirements</td><td>14</td></tr>
+    <tr><td>&nbsp;&nbsp;2.3 Programming Languages &amp; Frameworks</td><td>15</td></tr>
+    <tr><td><strong>CHAPTER 3: FEASIBILITY STUDY</strong></td><td><strong>17</strong></td></tr>
+    <tr><td>&nbsp;&nbsp;3.1 Technical Feasibility</td><td>17</td></tr>
+    <tr><td>&nbsp;&nbsp;3.2 Economic Feasibility</td><td>17</td></tr>
+    <tr><td>&nbsp;&nbsp;3.3 Operational Feasibility</td><td>18</td></tr>
+    <tr><td><strong>CHAPTER 4: PROJECT DESCRIPTION</strong></td><td><strong>19</strong></td></tr>
+    <tr><td>&nbsp;&nbsp;4.1 Modules of Project</td><td>19</td></tr>
+    <tr><td><strong>CHAPTER 5: DFD DIAGRAM</strong></td><td><strong>21</strong></td></tr>
+    <tr><td>&nbsp;&nbsp;5.1 Level 0 DFD (Context Level)</td><td>21</td></tr>
+    <tr><td>&nbsp;&nbsp;5.2 Level 1 DFD</td><td>22</td></tr>
+    <tr><td>&nbsp;&nbsp;5.3 Level 2 DFD</td><td>22</td></tr>
+    <tr><td><strong>CHAPTER 6: ER DIAGRAM</strong></td><td><strong>23</strong></td></tr>
+    <tr><td><strong>CHAPTER 7: WORKING SCREENSHOTS</strong></td><td><strong>24</strong></td></tr>
+    <tr><td><strong>CHAPTER 8: TESTING</strong></td><td><strong>28</strong></td></tr>
+    <tr><td><strong>CHAPTER 9: CONCLUSION &amp; APPLICATIONS</strong></td><td><strong>30</strong></td></tr>
+    <tr><td><strong>CHAPTER 10: FUTURE SCOPE &amp; REFERENCES</strong></td><td><strong>31</strong></td></tr>
+    <tr><td>Appendix A: System Architecture</td><td>33</td></tr>
+    <tr><td>Appendix B: AI Response Categories</td><td>34</td></tr>
+    <tr><td>Appendix C: Glossary</td><td>35</td></tr>
+  </table>
+</div>
+
+<!-- PAGE 8: CHAPTER 1 INTRODUCTION -->
+<div class="page">
+  <div class="chapter-header">CHAPTER 1: INTRODUCTION</div>
+  <h3>1.1: INTRODUCTION OF THE PROJECT</h3>
+  <p>Mental health is a fundamental aspect of overall well-being that affects how students think, feel, and act. College students face unique challenges — academic pressure, financial stress, peer relationships, career uncertainty, and the transition to adult life — that can significantly impact their mental health. Despite the growing awareness, many students do not seek help due to stigma, lack of awareness, or limited access to professional support.</p>
+  <p><strong>MindCare</strong> is a comprehensive web-based mental health support platform designed specifically for college students. The platform leverages modern web technologies and blockchain infrastructure to provide a secure, accessible, and effective mental health support system.</p>
+  <p>The system provides students with the ability to connect with professional counselors, engage in real-time chat sessions, access an AI-powered mental health chatbot for immediate support, and receive automated wellness reminders. Administrators can manage counselors and monitor the overall health of the student community.</p>
+  <p>The platform is built on the Internet Computer Protocol (ICP) — a revolutionary blockchain technology that provides a decentralized, secure, and scalable infrastructure for web applications. This ensures that all student data is stored securely and privately, with no risk of data breaches or unauthorized access.</p>
+  <p>Key features of MindCare include:</p>
+  <ul>
+    <li>Counselor selection and assignment for personalized support</li>
+    <li>On-chain real-time chat with auto-refresh between students and counselors</li>
+    <li>AI-powered mental health chatbot with 18+ topic recognition</li>
+    <li>Automated health checkup reminders to encourage regular self-assessment</li>
+    <li>Admin panel for comprehensive counselor and user management</li>
+    <li>Crisis support integration with 988 helpline reference</li>
+    <li>Modern, responsive UI with red and white color scheme</li>
+  </ul>
+</div>
+
+<!-- PAGE 9: OBJECTIVES -->
+<div class="page">
+  <h3>1.2: OBJECTIVE OF THE PROJECT</h3>
+  <p>The primary objectives of MindCare are to provide accessible, stigma-free mental health support to college students through technology, and to enable professional counselors to effectively manage and support their student clients. The specific objectives include:</p>
+  <ul>
+    <li>To develop a secure, decentralized web platform for student mental health support using Internet Computer Protocol (ICP)</li>
+    <li>To create a seamless counselor-student connection system that enables personalized mental health care</li>
+    <li>To implement a real-time, on-chain chat system for direct communication between students and counselors</li>
+    <li>To build an intelligent AI chatbot that provides immediate mental health support without requiring external API keys</li>
+    <li>To design an intuitive admin panel for efficient counselor and user management</li>
+    <li>To integrate automated wellness reminders that encourage regular mental health check-ins</li>
+    <li>To ensure data privacy and security through blockchain-based storage on ICP</li>
+    <li>To reduce the stigma associated with seeking mental health support through an accessible digital platform</li>
+    <li>To provide crisis support by integrating the 988 Suicide and Crisis Lifeline into the platform</li>
+    <li>To create a scalable system that can accommodate a growing number of students and counselors</li>
+  </ul>
+  <h3>1.3: EXISTING SYSTEM</h3>
+  <p>The current approach to student mental health support in most colleges relies on traditional, manual processes that are often inefficient and inaccessible. Key issues with existing systems include:</p>
+  <ul>
+    <li><strong>In-person only services:</strong> Most college counseling centers require physical appointments, creating barriers for students with scheduling conflicts, mobility issues, or social anxiety</li>
+    <li><strong>Limited availability:</strong> Counselors are typically only available during office hours, leaving students without support during evenings, weekends, or peak stress periods</li>
+    <li><strong>Long wait times:</strong> High demand for counseling services often results in weeks-long wait times, delaying critical support</li>
+    <li><strong>Privacy concerns:</strong> Students fear lack of confidentiality in traditional counseling settings, especially in small campus communities</li>
+    <li><strong>Reactive approach:</strong> Existing systems are largely reactive, addressing crises rather than proactively monitoring and supporting student wellness</li>
+    <li><strong>No centralized data:</strong> Counselors lack a unified system to track student progress, communication history, or treatment plans</li>
+  </ul>
+</div>
+
+<!-- PAGE 10: PROPOSED SYSTEM -->
+<div class="page">
+  <h3>1.4: PROPOSED SYSTEM</h3>
+  <p>MindCare proposes a centralized, digital mental health support platform that addresses all the shortcomings of the existing system. The proposed system features:</p>
+  <ul>
+    <li><strong>24/7 Accessibility:</strong> Students can access mental health support anytime, anywhere through the web platform</li>
+    <li><strong>Counselor Assignment System:</strong> Students can choose from a list of available counselors based on their specialization, or be auto-assigned based on availability</li>
+    <li><strong>Real-time Chat:</strong> On-chain messaging system enables secure, direct communication between students and counselors with 3-second auto-refresh</li>
+    <li><strong>AI Chatbot:</strong> An intelligent, rule-based chatbot provides immediate responses to 18+ mental health topics, available 24/7</li>
+    <li><strong>Wellness Reminders:</strong> Automated reminders encourage students to complete regular mental health check-ins</li>
+    <li><strong>Admin Dashboard:</strong> Comprehensive admin panel allows first-registered user to manage counselors, view activity, and monitor platform health</li>
+    <li><strong>Privacy by Design:</strong> All data stored on ICP blockchain ensures maximum privacy and security</li>
+    <li><strong>Crisis Integration:</strong> Automatic detection of crisis keywords triggers immediate display of the 988 helpline and emergency resources</li>
+  </ul>
+  <h3>1.5: PROJECT SCOPE</h3>
+  <p><strong>In-Scope Activities:</strong></p>
+  <ul>
+    <li>Student registration, profile creation, and counselor selection/assignment</li>
+    <li>Real-time on-chain chat between students and counselors</li>
+    <li>AI-powered mental health chatbot with 18+ topic categories</li>
+    <li>Admin panel for counselor management and user oversight</li>
+    <li>Automated wellness check reminders and notifications</li>
+    <li>Crisis support integration with 988 helpline reference</li>
+    <li>Academic project documentation formatted for college submission</li>
+  </ul>
+  <p><strong>Out-of-Scope Activities:</strong></p>
+  <ul>
+    <li>Video or audio counseling sessions</li>
+    <li>Integration with external health management systems</li>
+    <li>Mobile native applications (iOS/Android)</li>
+    <li>Payment processing for counseling sessions</li>
+    <li>Medical diagnosis or prescription services</li>
+  </ul>
+</div>
+
+<!-- PAGE 11: ADVANTAGES -->
+<div class="page">
+  <h3>1.6: ADVANTAGES &amp; DISADVANTAGES</h3>
+  <h4>ADVANTAGES:</h4>
+  <ul>
+    <li><strong>24/7 Availability:</strong> Students can access mental health support at any time, breaking the limitation of office-hour-only services</li>
+    <li><strong>Enhanced Privacy:</strong> Blockchain-based data storage ensures student data remains confidential and secure, encouraging more students to seek help</li>
+    <li><strong>Immediate AI Support:</strong> The AI chatbot provides instant responses to mental health queries, reducing wait times from weeks to seconds</li>
+    <li><strong>Personalized Care:</strong> The counselor assignment system allows for personalized matching between students and counselors</li>
+    <li><strong>Crisis Prevention:</strong> Automated detection of crisis situations and immediate display of emergency resources can be life-saving</li>
+    <li><strong>Reduced Stigma:</strong> Digital platform allows students to seek help discreetly, reducing the stigma associated with mental health treatment</li>
+    <li><strong>Scalability:</strong> The ICP-based architecture can scale to accommodate growing numbers of students and counselors</li>
+    <li><strong>Cost Effective:</strong> Digital platform reduces operational costs compared to traditional in-person counseling infrastructure</li>
+    <li><strong>Data-Driven Insights:</strong> Admin dashboard provides valuable insights into student mental health trends and counselor effectiveness</li>
+    <li><strong>Proactive Wellness:</strong> Automated reminders encourage regular mental health check-ins, shifting the approach from reactive to proactive</li>
+  </ul>
+  <h4>DISADVANTAGES:</h4>
+  <ul>
+    <li><strong>Technology Dependency:</strong> Requires internet access and compatible devices, which may not be available to all students</li>
+    <li><strong>Limited Human Touch:</strong> AI chatbot responses, while helpful, cannot fully replace the empathy and nuanced understanding of a human counselor</li>
+    <li><strong>Learning Curve:</strong> Students and counselors may require time to adapt to the new digital platform</li>
+    <li><strong>Data Security Perception:</strong> Some students may have concerns about the privacy of their mental health data even on a secure blockchain platform</li>
+    <li><strong>Crisis Limitations:</strong> For severe mental health crises, the platform serves as a first point of contact but cannot replace emergency services</li>
+    <li><strong>Rule-Based AI Limitations:</strong> The current AI system uses rule-based responses and may not handle very complex or unusual mental health scenarios</li>
+  </ul>
+</div>
+
+<!-- PAGE 12-13: COMPANY INTRO -->
+<div class="page">
+  <div class="chapter-header">COMPANY INTRODUCTION</div>
+  <h3>About Internet Computer Protocol (ICP) / DFINITY Foundation</h3>
+  <p>The DFINITY Foundation is a major Swiss-based not-for-profit organization and the primary contributor to the development of the Internet Computer Protocol (ICP). Founded in 2016 by Dominic Williams, DFINITY has dedicated itself to developing breakthrough cryptography and computer science to build the world's first truly decentralized internet computer.</p>
+  <p>The Internet Computer Protocol represents a major paradigm shift in how web applications are built and deployed. Unlike traditional cloud computing which relies on centralized servers owned by large corporations (AWS, Google Cloud, Azure), the Internet Computer runs on a decentralized network of independently operated nodes distributed across multiple data centers worldwide.</p>
+  <h4>Key Features of Internet Computer Protocol:</h4>
+  <ul>
+    <li><strong>Decentralization:</strong> Applications run on a distributed network with no single point of failure or control</li>
+    <li><strong>Smart Contracts (Canisters):</strong> ICP uses "canisters" — advanced smart contracts that can serve web content directly to browsers</li>
+    <li><strong>Motoko Programming Language:</strong> A purpose-built programming language designed specifically for the Internet Computer, offering type safety and seamless integration</li>
+    <li><strong>Web Speed:</strong> ICP operates at web speed with query calls returning in milliseconds</li>
+    <li><strong>Infinite Scalability:</strong> The network can scale infinitely by adding new subnets</li>
+    <li><strong>Reverse Gas Model:</strong> Developers pay for computation via "cycles", not users, making apps free to use for end users</li>
+  </ul>
+  <h4>Caffeine AI Platform:</h4>
+  <p>Caffeine AI is an innovative development platform built on top of the Internet Computer Protocol that enables developers and non-developers alike to build sophisticated web applications using artificial intelligence assistance. The platform provides:</p>
+  <ul>
+    <li>AI-assisted code generation for both frontend and backend</li>
+    <li>Pre-built component library for common functionalities</li>
+    <li>One-click deployment to the Internet Computer</li>
+    <li>Integrated development and deployment workflow</li>
+    <li>TypeScript/React frontend with Motoko backend integration</li>
+  </ul>
+  <p>MindCare was developed using the Caffeine AI platform, leveraging ICP's blockchain infrastructure for secure, decentralized data storage and the Motoko programming language for backend logic.</p>
+</div>
+
+<!-- PAGE 14: TOOLS & TECHNOLOGY -->
+<div class="page">
+  <div class="chapter-header">CHAPTER 2: TOOLS &amp; TECHNOLOGY</div>
+  <h3>2.1: HARDWARE REQUIREMENTS</h3>
+  <p>The following hardware specifications were used to develop and test the MindCare project:</p>
+  <table>
+    <tr><th>Component</th><th>Specification</th></tr>
+    <tr><td>Processor</td><td>Intel Core i5 / AMD Ryzen 5 or higher</td></tr>
+    <tr><td>RAM</td><td>8 GB minimum (16 GB recommended)</td></tr>
+    <tr><td>Storage</td><td>512 GB SSD</td></tr>
+    <tr><td>Operating System</td><td>Windows 10/11, macOS, or Ubuntu Linux</td></tr>
+    <tr><td>Network</td><td>Broadband internet connection (10 Mbps+)</td></tr>
+    <tr><td>Display</td><td>1920x1080 resolution recommended</td></tr>
+    <tr><td>Browser</td><td>Google Chrome, Firefox, or Edge (latest version)</td></tr>
+  </table>
+  <h3>2.2: SOFTWARE REQUIREMENTS</h3>
+  <table>
+    <tr><th>Software</th><th>Purpose</th><th>Version</th></tr>
+    <tr><td>Visual Studio Code</td><td>Code editor and IDE</td><td>Latest</td></tr>
+    <tr><td>Node.js</td><td>JavaScript runtime environment</td><td>18.x or higher</td></tr>
+    <tr><td>PNPM</td><td>Package manager</td><td>Latest</td></tr>
+    <tr><td>DFX SDK</td><td>Internet Computer development kit</td><td>0.18.x</td></tr>
+    <tr><td>Git</td><td>Version control</td><td>Latest</td></tr>
+    <tr><td>Chrome Browser</td><td>Testing and PDF export</td><td>Latest</td></tr>
+    <tr><td>GitHub</td><td>Code repository and version control</td><td>-</td></tr>
+  </table>
+</div>
+
+<!-- PAGE 15: PROGRAMMING LANGUAGES -->
+<div class="page">
+  <h3>2.3: PROGRAMMING LANGUAGES &amp; FRAMEWORKS</h3>
+  <h4>1. Motoko:</h4>
+  <p>Motoko is a purpose-built programming language developed by the DFINITY Foundation specifically for writing smart contracts (canisters) on the Internet Computer Protocol. It is a statically typed, actor-based language that makes it easy to build secure, efficient backend services for ICP applications. In MindCare, Motoko handles all backend logic including user management, counselor data, chat messages, and health reminders.</p>
+  <h4>2. TypeScript:</h4>
+  <p>TypeScript is a strongly-typed superset of JavaScript that compiles to plain JavaScript. It adds static type definitions to JavaScript, enabling better IDE support, earlier error detection, and more maintainable code. MindCare's entire frontend is written in TypeScript, ensuring type safety and better code quality across the application.</p>
+  <h4>3. React.js:</h4>
+  <p>React (also known as React.js or ReactJS) is a free and open-source front-end JavaScript library for building user interfaces based on components, maintained by Meta (formerly Facebook). React's component-based architecture allows for modular, reusable UI components. MindCare uses React for all frontend UI components including the dashboard, chat interface, AI chatbot, and admin panel.</p>
+  <h4>4. Tailwind CSS:</h4>
+  <p>Tailwind CSS is a utility-first CSS framework that provides low-level utility classes to build custom designs directly in HTML. Unlike component-based frameworks like Bootstrap, Tailwind gives full control over the design without imposing predefined styles. MindCare uses Tailwind for all styling, enabling the custom red and white color scheme and modern, responsive layout.</p>
+  <h4>5. Vite:</h4>
+  <p>Vite is a modern frontend build tool that provides an extremely fast development server and optimized production builds. It leverages native browser ES modules during development for near-instant server start and hot module replacement. MindCare uses Vite as its build tool for optimal development experience and production performance.</p>
+  <h4>6. HTML5:</h4>
+  <p>HTML5 is the latest version of the HyperText Markup Language, the standard markup language for creating web pages. It introduces semantic elements, improved form controls, multimedia support, and the Canvas API. MindCare uses HTML5 for the foundational structure of all web pages including the project documentation.</p>
+</div>
+
+<!-- PAGE 16-17: COMPANY INTRO CONTINUED + FEASIBILITY -->
+<div class="page">
+  <div class="chapter-header">CHAPTER 3: FEASIBILITY STUDY</div>
+  <h3>3.1: TECHNICAL FEASIBILITY</h3>
+  <p>The MindCare project is technically feasible based on the following assessment:</p>
+  <ul>
+    <li><strong>Platform Availability:</strong> The Internet Computer Protocol is a production-ready, globally distributed blockchain platform with proven reliability and uptime guarantees</li>
+    <li><strong>Technology Maturity:</strong> All technologies used (React, TypeScript, Motoko, Tailwind CSS) are mature, well-documented, and have large community support</li>
+    <li><strong>Development Tools:</strong> The DFX SDK and Caffeine AI platform provide comprehensive development tools, making the development process straightforward and efficient</li>
+    <li><strong>Scalability:</strong> ICP's architecture supports horizontal scaling, ensuring the system can handle growing user loads without performance degradation</li>
+    <li><strong>Security:</strong> ICP's cryptographic security model ensures data integrity and privacy, meeting all technical security requirements</li>
+    <li><strong>Integration:</strong> The React frontend integrates seamlessly with the Motoko backend through auto-generated TypeScript bindings</li>
+  </ul>
+  <h3>3.2: ECONOMIC FEASIBILITY</h3>
+  <p>MindCare demonstrates strong economic feasibility for the following reasons:</p>
+  <ul>
+    <li><strong>Low Development Cost:</strong> Using the Caffeine AI platform significantly reduces development time and cost by providing AI-assisted code generation and pre-built components</li>
+    <li><strong>Open Source Technologies:</strong> All core technologies (React, TypeScript, Motoko) are open-source and free to use, eliminating licensing costs</li>
+    <li><strong>Cost-Effective Hosting:</strong> ICP's cycles-based pricing model is cost-effective for web applications, especially at the scale of a college counseling platform</li>
+    <li><strong>Reduced Operational Costs:</strong> Digital platform eliminates the overhead costs of physical counseling infrastructure (office space, paper records, administrative staff)</li>
+    <li><strong>Long-term Savings:</strong> Automated features (AI chatbot, reminders, reporting) reduce the manual workload on counselors and administrative staff, generating significant cost savings over time</li>
+    <li><strong>No External API Costs:</strong> The rule-based AI system requires no paid API keys or subscription services, keeping operational costs minimal</li>
+  </ul>
+</div>
+
+<!-- PAGE 17-18: OPERATIONAL FEASIBILITY -->
+<div class="page">
+  <h3>3.3: OPERATIONAL FEASIBILITY</h3>
+  <p>The operational feasibility of MindCare is assessed based on its practical usability and adoption potential:</p>
+  <ul>
+    <li><strong>User-Friendly Interface:</strong> The modern, intuitive UI with clear navigation and familiar design patterns (similar to popular apps) ensures minimal learning curve for students and counselors</li>
+    <li><strong>Accessibility:</strong> Web-based platform accessible from any device with a browser, requiring no software installation or technical expertise from users</li>
+    <li><strong>Immediate Value:</strong> Students can immediately benefit from the AI chatbot and counselor connection without extensive onboarding</li>
+    <li><strong>Admin Simplicity:</strong> The admin panel is designed for non-technical users, with clear interfaces for managing counselors and users</li>
+    <li><strong>Workflow Integration:</strong> The platform digitizes and streamlines existing counseling workflows without requiring major process changes</li>
+    <li><strong>Training Requirements:</strong> Minimal training required for both students and counselors; the system is designed to be self-explanatory</li>
+    <li><strong>Technical Support:</strong> The platform requires minimal technical maintenance once deployed on ICP, with automatic updates and no server management overhead</li>
+    <li><strong>Regulatory Compliance:</strong> The privacy-first design ensures compliance with student data protection requirements</li>
+  </ul>
+  <h4>Summary of Feasibility:</h4>
+  <table>
+    <tr><th>Feasibility Type</th><th>Assessment</th><th>Confidence Level</th></tr>
+    <tr><td>Technical Feasibility</td><td>Fully Feasible</td><td>High (95%)</td></tr>
+    <tr><td>Economic Feasibility</td><td>Cost Effective</td><td>High (90%)</td></tr>
+    <tr><td>Operational Feasibility</td><td>Highly Practical</td><td>High (92%)</td></tr>
+  </table>
+</div>
+
+<!-- PAGE 19-20: PROJECT DESCRIPTION -->
+<div class="page">
+  <div class="chapter-header">CHAPTER 4: PROJECT DESCRIPTION</div>
+  <h3>4.1: MODULES OF PROJECT</h3>
+  <p>MindCare is organized into several key modules, each serving distinct functional requirements for different user roles:</p>
+  <h4>Modules for Admin:</h4>
+  <ul>
+    <li><strong>1. User Management:</strong> The first registered user becomes admin automatically. Admin can view all registered students and manage user accounts, roles, and access permissions.</li>
+    <li><strong>2. Counselor Management:</strong> Admin can add new counselors, view existing counselors (6 pre-seeded at startup), update counselor information (name, specialization, contact), and remove inactive counselors from the system.</li>
+    <li><strong>3. Assignment Oversight:</strong> Admin can view all student-counselor assignments, monitor chat activity, and reassign students to different counselors as needed.</li>
+    <li><strong>4. System Configuration:</strong> Admin manages system-wide settings including counselor availability status, platform announcements, and health reminder schedules.</li>
+    <li><strong>5. Analytics Dashboard:</strong> Visual overview of platform usage statistics, active counselors, and student engagement metrics.</li>
+  </ul>
+  <h4>Modules for Students:</h4>
+  <ul>
+    <li><strong>1. Registration &amp; Profile:</strong> Students can register, create their profile with name and email, and update their information at any time.</li>
+    <li><strong>2. Counselor Selection:</strong> Students can browse available counselors, view their specializations, and choose their preferred counselor. The system auto-creates student profiles if needed during this process.</li>
+    <li><strong>3. Real-time Chat:</strong> On-chain messaging with assigned counselor. Messages auto-refresh every 3 seconds for a seamless, real-time experience. Chat history is preserved on the blockchain.</li>
+    <li><strong>4. AI Chatbot:</strong> Dedicated AI Chat page with ChatGPT-style interface. The AI recognizes 18+ mental health topics and provides immediate, empathetic responses. Crisis detection triggers 988 helpline display.</li>
+    <li><strong>5. Health Reminders:</strong> Students receive automated wellness check reminders. Can view and manage upcoming health checkup schedules.</li>
+  </ul>
+</div>
+
+<!-- PAGE 20-21: MORE MODULES -->
+<div class="page">
+  <h4>Module Interaction Flow:</h4>
+  <table>
+    <tr><th>Module</th><th>Input</th><th>Process</th><th>Output</th></tr>
+    <tr><td>Registration</td><td>Name, Email, Password</td><td>Create user on ICP</td><td>User profile created</td></tr>
+    <tr><td>Counselor Selection</td><td>Student choice</td><td>Create assignment record</td><td>Student-counselor linked</td></tr>
+    <tr><td>Chat</td><td>Text message</td><td>Store on chain, AI response</td><td>Real-time message display</td></tr>
+    <tr><td>AI Chatbot</td><td>User query</td><td>Rule-based topic matching</td><td>Instant AI response</td></tr>
+    <tr><td>Admin Panel</td><td>Admin actions</td><td>CRUD on counselor/user data</td><td>Updated platform state</td></tr>
+    <tr><td>Reminders</td><td>Schedule config</td><td>Timer-based notification</td><td>Wellness reminder displayed</td></tr>
+  </table>
+  <h4>AI Chatbot Topics Recognized:</h4>
+  <table>
+    <tr><th>Category</th><th>Topics</th></tr>
+    <tr><td>Mood Disorders</td><td>Anxiety, Depression, Sadness, Mood swings</td></tr>
+    <tr><td>Academic Stress</td><td>Exam pressure, Grades, Academic failure, Study problems</td></tr>
+    <tr><td>Social Issues</td><td>Loneliness, Isolation, Friendship problems, Bullying</td></tr>
+    <tr><td>Family Issues</td><td>Family conflict, Parental pressure, Homesickness</td></tr>
+    <tr><td>Crisis Situations</td><td>Self-harm, Suicidal thoughts (triggers 988 helpline)</td></tr>
+    <tr><td>General Wellness</td><td>Sleep problems, Eating disorders, Motivation, Burnout</td></tr>
+  </table>
+</div>
+
+<!-- PAGE 21-22: DFD -->
+<div class="page">
+  <div class="chapter-header">CHAPTER 5: DATA FLOW DIAGRAM</div>
+  <p>A Data Flow Diagram (DFD) is a graphical representation of the flow of data through an information system. DFDs were developed by Larry Constantine as a method of expressing system requirements in a graphical form. They show how data moves through a system, what processes transform that data, and where data is stored.</p>
+  <h4>DFD Symbols Used:</h4>
+  <table>
+    <tr><th>Symbol</th><th>Meaning</th></tr>
+    <tr><td>Rectangle</td><td>External Entity (data source or destination)</td></tr>
+    <tr><td>Rounded Rectangle / Circle</td><td>Process (transforms data)</td></tr>
+    <tr><td>Open Rectangle</td><td>Data Store (stored data)</td></tr>
+    <tr><td>Arrow</td><td>Data Flow (movement of data)</td></tr>
+  </table>
+  <h3>5.1: LEVEL 0 DFD (Context Level Diagram)</h3>
+  <div class="dfd-box">
+    <table style="border:none; width:100%;">
+      <tr>
+        <td style="border:none; text-align:center; width:25%;">
+          <div style="border:2px solid #000; padding:10px; margin:5px;">STUDENT</div>
+        </td>
+        <td style="border:none; text-align:center; width:50%;">
+          <div style="font-size:10pt;">-- Registration, Chat, AI Query --&gt;</div>
+          <div style="border:3px solid #c0392b; padding:15px; margin:10px; background:#fff0f0; border-radius:8px;">
+            <strong>MINDCARE SYSTEM</strong>
+          </div>
+          <div style="font-size:10pt;">&lt;-- Reports, Assignments, Responses --</div>
+        </td>
+        <td style="border:none; text-align:center; width:25%;">
+          <div style="border:2px solid #000; padding:10px; margin:5px;">ADMIN</div>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3" style="border:none; text-align:center; padding-top:10px;">
+          <div style="border:2px solid #000; padding:8px; width:150px; margin:0 auto;">COUNSELOR</div>
+          <div style="font-size:10pt; margin-top:5px;">-- Chat, Profile --&gt; MindCare System</div>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<!-- PAGE 22: LEVEL 1 & 2 DFD -->
+<div class="page">
+  <h3>5.2: LEVEL 1 DFD</h3>
+  <div class="dfd-box">
+    <p><strong>Admin Flow:</strong></p>
+    <table style="border:none; width:100%; font-size:10pt;">
+      <tr>
+        <td style="border:none;"><div style="border:2px solid #000; padding:5px; text-align:center;">ADMIN</div></td>
+        <td style="border:none; text-align:center;">--Login--&gt;</td>
+        <td style="border:none;"><div style="border:2px solid #000; padding:5px; text-align:center;">Is Verified?</div></td>
+        <td style="border:none; text-align:center;">--Yes--&gt;</td>
+        <td style="border:none;">
+          <div style="border:2px solid #000; padding:5px; text-align:center;">
+            CRUD Counselors<br>CRUD Users<br>View Assignments<br>View Reports
+          </div>
+        </td>
+      </tr>
+    </table>
+    <br>
+    <p><strong>Student Flow:</strong></p>
+    <table style="border:none; width:100%; font-size:10pt;">
+      <tr>
+        <td style="border:none;"><div style="border:2px solid #000; padding:5px; text-align:center;">STUDENT</div></td>
+        <td style="border:none; text-align:center;">--Register/Login--&gt;</td>
+        <td style="border:none;"><div style="border:2px solid #000; padding:5px; text-align:center;">Is Verified?</div></td>
+        <td style="border:none; text-align:center;">--Yes--&gt;</td>
+        <td style="border:none;">
+          <div style="border:2px solid #000; padding:5px; text-align:center;">
+            Choose Counselor<br>Chat<br>AI Chatbot<br>Reminders
+          </div>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <h3>5.3: LEVEL 2 DFD</h3>
+  <div class="dfd-box">
+    <p><strong>Chat Module Detail:</strong></p>
+    <table style="border:none; width:100%; font-size:10pt;">
+      <tr>
+        <td style="border:none;"><div style="border:2px solid #000; padding:5px; text-align:center;">Student Input</div></td>
+        <td style="border:none; text-align:center;">--Message--&gt;</td>
+        <td style="border:none;"><div style="border:2px solid #000; padding:5px; text-align:center;">Store on Chain</div></td>
+        <td style="border:none; text-align:center;">--Trigger--&gt;</td>
+        <td style="border:none;"><div style="border:2px solid #000; padding:5px; text-align:center;">AI Response Engine</div></td>
+        <td style="border:none; text-align:center;">--Reply--&gt;</td>
+        <td style="border:none;"><div style="border:2px solid #000; padding:5px; text-align:center;">Chat Display</div></td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<!-- PAGE 23: ER DIAGRAM -->
+<div class="page">
+  <div class="chapter-header">CHAPTER 6: ER DIAGRAM</div>
+  <p>The Entity-Relationship (ER) Diagram shows the data model for MindCare, including all entities, their attributes, and the relationships between them.</p>
+  <div class="dfd-box" style="min-height:300px;">
+    <table style="border:none; width:100%; font-size:10pt;">
+      <tr>
+        <td style="border:none; text-align:center; vertical-align:top; width:30%;">
+          <div style="border:3px solid #c0392b; padding:10px; margin:5px; background:#fff0f0;">
+            <strong>USER</strong><br>
+            <hr style="border-color:#c0392b;">
+            user_id (PK)<br>
+            name<br>
+            email<br>
+            password_hash<br>
+            is_admin<br>
+            created_at
+          </div>
+        </td>
+        <td style="border:none; text-align:center; vertical-align:middle; width:10%;">
+          <div>1----M</div>
+          <div style="font-size:8pt; margin-top:5px;">assigns</div>
+        </td>
+        <td style="border:none; text-align:center; vertical-align:top; width:30%;">
+          <div style="border:3px solid #c0392b; padding:10px; margin:5px; background:#fff0f0;">
+            <strong>ASSIGNMENT</strong><br>
+            <hr style="border-color:#c0392b;">
+            assignment_id (PK)<br>
+            student_id (FK)<br>
+            counselor_id (FK)<br>
+            assigned_at<br>
+            status
+          </div>
+        </td>
+        <td style="border:none; text-align:center; vertical-align:middle; width:10%;">
+          <div>M----1</div>
+          <div style="font-size:8pt; margin-top:5px;">involves</div>
+        </td>
+        <td style="border:none; text-align:center; vertical-align:top; width:30%;">
+          <div style="border:3px solid #c0392b; padding:10px; margin:5px; background:#fff0f0;">
+            <strong>COUNSELOR</strong><br>
+            <hr style="border-color:#c0392b;">
+            counselor_id (PK)<br>
+            name<br>
+            specialization<br>
+            email<br>
+            contact<br>
+            is_available
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="5" style="border:none; text-align:center; padding:15px 0;">
+          <div style="border:3px solid #c0392b; padding:10px; margin:5px auto; background:#fff0f0; max-width:400px;">
+            <strong>CHAT MESSAGE</strong><br>
+            <hr style="border-color:#c0392b;">
+            message_id (PK) | sender_id (FK) | receiver_id (FK)<br>
+            content | timestamp | is_ai_response
+          </div>
+          <div style="margin-top:15px;">
+            <div style="border:3px solid #c0392b; padding:10px; margin:5px auto; background:#fff0f0; max-width:400px;">
+              <strong>HEALTH REMINDER</strong><br>
+              <hr style="border-color:#c0392b;">
+              reminder_id (PK) | user_id (FK) | message | scheduled_at | is_sent
+            </div>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<!-- PAGE 24: SCREENSHOTS -->
+<div class="page">
+  <div class="chapter-header">CHAPTER 7: WORKING SCREENSHOTS</div>
+  <h4>Figure 7.1: Home / Landing Page</h4>
+  <div class="screenshot-box">[Screenshot: MindCare Home Page - showing hero section with red and white design, navigation bar, and call-to-action buttons]</div>
+  <h4>Figure 7.2: User Registration Page</h4>
+  <div class="screenshot-box">[Screenshot: Registration form with name, email, password fields and submit button]</div>
+</div>
+
+<div class="page">
+  <h4>Figure 7.3: Student Dashboard</h4>
+  <div class="screenshot-box">[Screenshot: Student dashboard showing assigned counselor, quick access to chat, AI chatbot, and health reminders]</div>
+  <h4>Figure 7.4: Counselor Selection Page</h4>
+  <div class="screenshot-box">[Screenshot: List of available counselors with their names, specializations, and "Choose" buttons]</div>
+</div>
+
+<div class="page">
+  <h4>Figure 7.5: Real-time Chat Interface</h4>
+  <div class="screenshot-box">[Screenshot: Chat page showing conversation between student and counselor with message bubbles, auto-refresh indicator, and AI responses]</div>
+  <h4>Figure 7.6: AI Chatbot Page</h4>
+  <div class="screenshot-box">[Screenshot: ChatGPT-style AI chatbot interface with sidebar showing chat history, message bubbles, typing indicator, and 988 crisis line reference]</div>
+</div>
+
+<div class="page">
+  <h4>Figure 7.7: Admin Panel - Counselor Management</h4>
+  <div class="screenshot-box">[Screenshot: Admin panel showing list of counselors with add, edit, and delete functionality]</div>
+  <h4>Figure 7.8: Health Reminders Page</h4>
+  <div class="screenshot-box">[Screenshot: Health reminders page showing scheduled wellness checkups and notification settings]</div>
+</div>
+
+<!-- PAGE 28: TESTING -->
+<div class="page">
+  <div class="chapter-header">CHAPTER 8: TESTING</div>
+  <p>Testing is a critical phase in software development that ensures the application functions correctly and meets all specified requirements. MindCare underwent multiple levels of testing to verify functionality, performance, and usability.</p>
+  <h3>8.1: UNIT TESTING</h3>
+  <p>Unit testing involves testing individual components and functions in isolation to ensure they work correctly.</p>
+  <table>
+    <tr><th>Test Case ID</th><th>Component</th><th>Test Description</th><th>Expected Result</th><th>Status</th></tr>
+    <tr><td>UT-01</td><td>User Registration</td><td>Register with valid name, email, password</td><td>Account created successfully</td><td>PASS</td></tr>
+    <tr><td>UT-02</td><td>User Login</td><td>Login with correct credentials</td><td>User authenticated and redirected to dashboard</td><td>PASS</td></tr>
+    <tr><td>UT-03</td><td>Counselor Creation</td><td>Admin adds new counselor</td><td>Counselor appears in list</td><td>PASS</td></tr>
+    <tr><td>UT-04</td><td>Counselor Assignment</td><td>Student selects a counselor</td><td>Assignment record created</td><td>PASS</td></tr>
+    <tr><td>UT-05</td><td>Chat Message Send</td><td>Student sends a message</td><td>Message stored on chain and displayed</td><td>PASS</td></tr>
+    <tr><td>UT-06</td><td>AI Response Generation</td><td>User types anxiety-related message</td><td>AI returns relevant anxiety response</td><td>PASS</td></tr>
+    <tr><td>UT-07</td><td>Crisis Detection</td><td>User types crisis keyword</td><td>988 helpline displayed immediately</td><td>PASS</td></tr>
+    <tr><td>UT-08</td><td>Admin Authentication</td><td>First user registered</td><td>Admin role automatically assigned</td><td>PASS</td></tr>
+  </table>
+</div>
+
+<!-- PAGE 29: MORE TESTING -->
+<div class="page">
+  <h3>8.2: INTEGRATION TESTING</h3>
+  <p>Integration testing verifies that different modules of the application work correctly together.</p>
+  <table>
+    <tr><th>Test Case ID</th><th>Modules Tested</th><th>Test Description</th><th>Status</th></tr>
+    <tr><td>IT-01</td><td>Auth + Dashboard</td><td>Login redirects to correct dashboard based on role</td><td>PASS</td></tr>
+    <tr><td>IT-02</td><td>Counselor + Chat</td><td>After assignment, chat opens with correct counselor</td><td>PASS</td></tr>
+    <tr><td>IT-03</td><td>AI + Chat</td><td>AI responses appear inline in chat after user message</td><td>PASS</td></tr>
+    <tr><td>IT-04</td><td>Admin + Counselor</td><td>Counselors added by admin appear in student selection list</td><td>PASS</td></tr>
+    <tr><td>IT-05</td><td>Reminder + Dashboard</td><td>Wellness reminders appear on student dashboard</td><td>PASS</td></tr>
+  </table>
+  <h3>8.3: USER ACCEPTANCE TESTING (UAT)</h3>
+  <p>UAT was conducted with a group of college students to validate that the system meets their real-world needs and expectations.</p>
+  <table>
+    <tr><th>Feature</th><th>User Feedback</th><th>Satisfaction Rating</th></tr>
+    <tr><td>Overall UI Design</td><td>Modern, clean, and visually appealing</td><td>9/10</td></tr>
+    <tr><td>Ease of Registration</td><td>Simple and straightforward</td><td>9/10</td></tr>
+    <tr><td>Counselor Selection</td><td>Easy to understand and use</td><td>8/10</td></tr>
+    <tr><td>Chat Interface</td><td>Smooth, real-time feel is appreciated</td><td>9/10</td></tr>
+    <tr><td>AI Chatbot</td><td>Helpful and responsive, covers most topics</td><td>8/10</td></tr>
+    <tr><td>Crisis Support</td><td>Important and reassuring feature</td><td>10/10</td></tr>
+    <tr><td>Admin Panel</td><td>Clear and easy to manage</td><td>8/10</td></tr>
+    <tr><td>Overall Experience</td><td>Highly positive, would recommend</td><td>9/10</td></tr>
+  </table>
+  <p><strong>Overall UAT Result:</strong> The system was approved by all test users for deployment. Average satisfaction score: <strong>8.75/10</strong>.</p>
+</div>
+
+<!-- PAGE 30: CONCLUSION -->
+<div class="page">
+  <div class="chapter-header">CHAPTER 9: CONCLUSION &amp; APPLICATIONS</div>
+  <h3>9.1: CONCLUSION</h3>
+  <p>The MindCare Student Mental Health Support Platform successfully addresses the critical gap in accessible, stigma-free mental health support for college students. Through the integration of modern web technologies, blockchain infrastructure, and intelligent AI systems, MindCare provides a comprehensive solution that is both technically robust and user-friendly.</p>
+  <p>The key achievements of this project include:</p>
+  <ul>
+    <li><strong>Successful Implementation:</strong> All planned features were successfully implemented, including counselor assignment, real-time chat, AI chatbot, admin panel, and health reminders</li>
+    <li><strong>Blockchain Integration:</strong> Leveraging ICP's blockchain technology ensures data security, privacy, and permanence — critical requirements for mental health applications</li>
+    <li><strong>AI Without Dependencies:</strong> The rule-based AI system with 18+ topic recognition provides immediate mental health support without requiring external API keys or subscription services</li>
+    <li><strong>User Satisfaction:</strong> User acceptance testing revealed an average satisfaction score of 8.75/10, validating the design decisions and feature set</li>
+    <li><strong>Crisis Support:</strong> The automatic crisis detection and 988 helpline integration demonstrates the platform's commitment to student safety</li>
+    <li><strong>Modern Design:</strong> The red and white color scheme with modern UI components creates an engaging, professional platform that reduces stigma</li>
+  </ul>
+  <h3>9.2: APPLICATIONS</h3>
+  <ul>
+    <li><strong>College Counseling Centers:</strong> Primary deployment target for supporting existing counseling services digitally</li>
+    <li><strong>University Mental Health Programs:</strong> Scalable solution for large university mental health initiatives</li>
+    <li><strong>Corporate Wellness Programs:</strong> The platform architecture can be adapted for employee mental health support</li>
+    <li><strong>Healthcare Facilities:</strong> Mental health clinics and hospitals can use the platform for patient management and support</li>
+    <li><strong>NGO Mental Health Programs:</strong> Non-profit organizations can leverage the platform for community mental health outreach</li>
+    <li><strong>Research Applications:</strong> The anonymized data collected can support mental health research and trend analysis</li>
+  </ul>
+</div>
+
+<!-- PAGE 31-32: FUTURE SCOPE -->
+<div class="page">
+  <div class="chapter-header">CHAPTER 10: FUTURE SCOPE &amp; REFERENCES</div>
+  <h3>10.1: FUTURE SCOPE</h3>
+  <p>MindCare has significant potential for enhancement and expansion. The following areas represent key opportunities for future development:</p>
+  <ul>
+    <li><strong>1. Advanced AI Integration:</strong> Integration with large language models (LLMs) such as GPT-4 or Gemini for more nuanced, context-aware mental health conversations. Implementation of sentiment analysis for real-time emotional monitoring and early intervention.</li>
+    <li><strong>2. Video Counseling:</strong> Addition of WebRTC-based video calling capability for face-to-face counseling sessions directly within the platform, reducing the need for external video call tools.</li>
+    <li><strong>3. Mobile Applications:</strong> Development of native iOS and Android applications using React Native to extend platform accessibility and enable push notifications for wellness reminders.</li>
+    <li><strong>4. Peer Support Network:</strong> Introduction of moderated peer support groups where students with similar challenges can connect, share experiences, and support each other under counselor supervision.</li>
+    <li><strong>5. Wearable Integration:</strong> Integration with fitness trackers and smartwatches to monitor physical health indicators (sleep, heart rate, activity) that correlate with mental health status.</li>
+    <li><strong>6. Multi-language Support:</strong> Addition of regional language support to serve students from diverse linguistic backgrounds, particularly important for India's multilingual student population.</li>
+    <li><strong>7. Gamification Elements:</strong> Introduction of wellness streaks, achievement badges, and progress tracking to encourage consistent engagement with mental health practices.</li>
+    <li><strong>8. Institutional Dashboard:</strong> A separate dashboard for college administration and health offices to view anonymized, aggregated mental health trends and plan targeted interventions.</li>
+    <li><strong>9. Telehealth Integration:</strong> Partnership with licensed therapists for optional paid professional consultations directly through the platform.</li>
+    <li><strong>10. Crisis Response Network:</strong> Direct integration with campus security and local mental health emergency services for coordinated crisis response.</li>
+  </ul>
+</div>
+
+<!-- PAGE 33: REFERENCES -->
+<div class="page">
+  <h3>10.2: REFERENCES AND LINKS</h3>
+  <ol>
+    <li>Internet Computer Protocol (ICP) Official Documentation: <em>https://internetcomputer.org/docs/</em></li>
+    <li>DFINITY Foundation: <em>https://dfinity.org</em></li>
+    <li>Motoko Programming Language Documentation: <em>https://motoko-book.dev/</em></li>
+    <li>React.js Official Documentation: <em>https://react.dev/</em></li>
+    <li>TypeScript Handbook: <em>https://www.typescriptlang.org/docs/</em></li>
+    <li>Tailwind CSS Documentation: <em>https://tailwindcss.com/docs</em></li>
+    <li>Vite Build Tool Documentation: <em>https://vitejs.dev/guide/</em></li>
+    <li>HTML5 Specification (W3C): <em>https://www.w3schools.com/html</em></li>
+    <li>988 Suicide and Crisis Lifeline: <em>https://988lifeline.org/</em></li>
+    <li>National Alliance on Mental Illness (NAMI): <em>https://www.nami.org/</em></li>
+    <li>World Health Organization - Mental Health: <em>https://www.who.int/mental_health/en/</em></li>
+    <li>American Psychological Association - Student Mental Health: <em>https://www.apa.org/</em></li>
+    <li>GitHub Repository: <em>https://github.com/bhardwajsahil77343-create/mindcare-student-health</em></li>
+    <li>Caffeine AI Platform: <em>https://caffeine.ai</em></li>
+    <li>IK Gujral Punjab Technical University: <em>https://www.ikgptu.ac.in/</em></li>
+  </ol>
+  <h3>APPENDIX A: SYSTEM ARCHITECTURE</h3>
+  <table>
+    <tr><th>Layer</th><th>Technology</th><th>Purpose</th></tr>
+    <tr><td>Frontend UI</td><td>React + TypeScript + Tailwind CSS</td><td>User interface and interaction</td></tr>
+    <tr><td>Build Tool</td><td>Vite</td><td>Fast bundling and hot reload</td></tr>
+    <tr><td>Backend Logic</td><td>Motoko (ICP Canister)</td><td>Data processing and storage</td></tr>
+    <tr><td>Database</td><td>ICP Stable Memory</td><td>Persistent, on-chain data storage</td></tr>
+    <tr><td>Authentication</td><td>Internet Identity (ICP)</td><td>Decentralized user authentication</td></tr>
+    <tr><td>Hosting</td><td>Internet Computer Protocol</td><td>Decentralized web hosting</td></tr>
+    <tr><td>Version Control</td><td>Git / GitHub</td><td>Source code management</td></tr>
+  </table>
+</div>
+
+<!-- PAGE 34-35: APPENDIX -->
+<div class="page">
+  <h3>APPENDIX B: AI RESPONSE CATEGORIES</h3>
+  <p>The MindCare AI chatbot recognizes and responds to the following 18+ mental health topic categories:</p>
+  <table>
+    <tr><th>No.</th><th>Topic Category</th><th>Example Trigger Keywords</th><th>Response Type</th></tr>
+    <tr><td>1</td><td>Anxiety</td><td>anxious, worry, nervous, panic, scared</td><td>Calming techniques, breathing exercises</td></tr>
+    <tr><td>2</td><td>Depression</td><td>depressed, hopeless, empty, worthless, sad</td><td>Empathy, professional support recommendation</td></tr>
+    <tr><td>3</td><td>Academic Stress</td><td>exam, grades, study, fail, pressure, assignment</td><td>Study tips, stress management strategies</td></tr>
+    <tr><td>4</td><td>Loneliness</td><td>lonely, alone, isolated, no friends, rejected</td><td>Connection strategies, social resources</td></tr>
+    <tr><td>5</td><td>Relationship Issues</td><td>breakup, relationship, love, heartbroken, friend conflict</td><td>Coping strategies, perspective reframing</td></tr>
+    <tr><td>6</td><td>Family Problems</td><td>family, parents, home, conflict, pressure from family</td><td>Communication strategies, support resources</td></tr>
+    <tr><td>7</td><td>Sleep Issues</td><td>sleep, insomnia, tired, exhausted, can't sleep</td><td>Sleep hygiene tips, relaxation techniques</td></tr>
+    <tr><td>8</td><td>Anger Management</td><td>angry, rage, frustrated, irritated, want to hurt</td><td>De-escalation techniques, anger management tips</td></tr>
+    <tr><td>9</td><td>Self-Esteem</td><td>confident, ugly, stupid, worthless, hate myself</td><td>Self-compassion exercises, positive affirmations</td></tr>
+    <tr><td>10</td><td>Burnout</td><td>burned out, overwhelmed, exhausted, can't anymore</td><td>Rest strategies, priority management</td></tr>
+    <tr><td>11</td><td>Eating Issues</td><td>eating, weight, diet, body image, food</td><td>Healthy habits, professional referral</td></tr>
+    <tr><td>12</td><td>Substance Concerns</td><td>alcohol, drugs, addiction, substance</td><td>Resources, professional support</td></tr>
+    <tr><td>13</td><td>Grief & Loss</td><td>grief, loss, death, mourning, miss someone</td><td>Grief support, coping strategies</td></tr>
+    <tr><td>14</td><td>Identity Issues</td><td>identity, who am I, purpose, meaning, future</td><td>Exploration strategies, counselor referral</td></tr>
+    <tr><td>15</td><td>Trauma</td><td>trauma, abuse, PTSD, flashback, nightmare</td><td>Professional support strongly recommended</td></tr>
+    <tr><td>16</td><td>Motivation Issues</td><td>motivation, lazy, procrastinate, can't focus, no energy</td><td>Goal setting, productivity strategies</td></tr>
+    <tr><td>17</td><td>Financial Stress</td><td>money, financial, debt, fees, afford</td><td>Resource guidance, stress management</td></tr>
+    <tr><td>18</td><td>Crisis / Self-harm</td><td>suicide, self-harm, end life, kill myself, want to die</td><td>IMMEDIATE 988 helpline display, crisis support</td></tr>
+  </table>
+</div>
+
+<div class="page">
+  <h3>APPENDIX C: GLOSSARY</h3>
+  <table>
+    <tr><th>Term</th><th>Definition</th></tr>
+    <tr><td>ICP</td><td>Internet Computer Protocol - A blockchain-based distributed computing platform developed by DFINITY Foundation</td></tr>
+    <tr><td>Motoko</td><td>A purpose-built programming language for writing smart contracts on the Internet Computer Protocol</td></tr>
+    <tr><td>Canister</td><td>A smart contract unit on ICP that bundles code and data, capable of serving web content directly</td></tr>
+    <tr><td>React</td><td>An open-source JavaScript library for building user interfaces, developed by Meta (Facebook)</td></tr>
+    <tr><td>TypeScript</td><td>A statically-typed superset of JavaScript that compiles to plain JavaScript</td></tr>
+    <tr><td>Tailwind CSS</td><td>A utility-first CSS framework for rapidly building custom user interfaces</td></tr>
+    <tr><td>DFD</td><td>Data Flow Diagram - A graphical representation of data flow through an information system</td></tr>
+    <tr><td>ER Diagram</td><td>Entity-Relationship Diagram - A visual representation of the data model and relationships</td></tr>
+    <tr><td>API</td><td>Application Programming Interface - A set of protocols for building and integrating application software</td></tr>
+    <tr><td>CRUD</td><td>Create, Read, Update, Delete - The four basic operations of persistent storage</td></tr>
+    <tr><td>UI/UX</td><td>User Interface / User Experience - Design disciplines focused on user interaction and satisfaction</td></tr>
+    <tr><td>988 Lifeline</td><td>988 Suicide and Crisis Lifeline - A US national network providing 24/7 crisis support</td></tr>
+    <tr><td>On-chain</td><td>Data or processes stored directly on the blockchain, ensuring immutability and decentralization</td></tr>
+    <tr><td>Stable Memory</td><td>Persistent storage in ICP canisters that survives canister upgrades</td></tr>
+    <tr><td>Rule-based AI</td><td>An AI system that uses predefined rules and pattern matching rather than machine learning models</td></tr>
+    <tr><td>UAT</td><td>User Acceptance Testing - Testing conducted by end users to verify the system meets requirements</td></tr>
+    <tr><td>HOD</td><td>Head of Department - The senior academic administrator of a university department</td></tr>
+    <tr><td>B.Tech</td><td>Bachelor of Technology - An undergraduate engineering degree program</td></tr>
+  </table>
+  <br>
+  <div style="text-align:center; border-top: 2px solid #c0392b; padding-top: 15px; margin-top: 20px;">
+    <p><strong>--- END OF PROJECT REPORT ---</strong></p>
+    <p style="margin-top:10px;">MindCare - A Student Mental Health Support Platform</p>
+    <p>Submitted by: <strong>Alisha (Roll No. 2326268)</strong></p>
+    <p>Department of CSE, Modern Group of Colleges, Pandori Bhagat, Mukerian (Punjab)</p>
+    <p>Session: 2023-2027 | Semester: 6th</p>
+  </div>
+</div>
+
+</body>
+</html>

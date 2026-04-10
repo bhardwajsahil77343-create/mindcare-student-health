@@ -42,20 +42,18 @@ export type UserRole = { 'admin' : null } |
   { 'user' : null } |
   { 'guest' : null };
 export interface _SERVICE {
-  '_initializeAccessControlWithSecret' : ActorMethod<[string], undefined>,
   'addCounselor' : ActorMethod<[Counselor], bigint>,
-  'assignCallerUserRole' : ActorMethod<[Principal, UserRole], undefined>,
   'assignCounselor' : ActorMethod<[bigint], undefined>,
+  'assignRole' : ActorMethod<[Principal, UserRole], undefined>,
   'getCallerUserProfile' : ActorMethod<[], [] | [UserProfile]>,
-  'getCallerUserRole' : ActorMethod<[], UserRole>,
   'getCounselor' : ActorMethod<[bigint], Counselor>,
   'getMessages' : ActorMethod<[Principal], Array<ChatMessage>>,
   'getMyAssignment' : ActorMethod<[], [] | [bigint]>,
   'getMyProfile' : ActorMethod<[], StudentProfile>,
   'getMyReminder' : ActorMethod<[], CheckupReminder>,
   'getUserProfile' : ActorMethod<[Principal], [] | [UserProfile]>,
+  'getUserRole' : ActorMethod<[], UserRole>,
   'initializeUser' : ActorMethod<[], undefined>,
-  'isCallerAdmin' : ActorMethod<[], boolean>,
   'listCounselors' : ActorMethod<[], Array<Counselor>>,
   'registerStudent' : ActorMethod<[string, string], undefined>,
   'removeCounselor' : ActorMethod<[bigint], undefined>,

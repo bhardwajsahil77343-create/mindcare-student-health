@@ -1,0 +1,64 @@
+type UserRole = 
+ variant {
+   admin;
+   guest;
+   user;
+ };
+type UserProfile = 
+ record {
+   email: text;
+   name: text;
+ };
+type StudentProfile = 
+ record {
+   assignedCounselorId: opt nat;
+   email: text;
+   name: text;
+   "principal": principal;
+ };
+type Counselor = 
+ record {
+   availability: text;
+   bio: text;
+   id: nat;
+   isActive: bool;
+   name: text;
+   photoUrl: text;
+   specialty: text;
+ };
+type CheckupReminder = 
+ record {
+   lastCheckupDate: int;
+   nextDueDate: int;
+   studentPrincipal: principal;
+ };
+type ChatMessage = 
+ record {
+   content: text;
+   fromPrincipal: principal;
+   id: nat;
+   timestamp: int;
+   toPrincipal: principal;
+ };
+service : {
+  addCounselor: (counselor: Counselor) -> (nat);
+  assignCounselor: (counselorId: nat) -> ();
+  assignRole: (user: principal, role: UserRole) -> ();
+  getCallerUserProfile: () -> (opt UserProfile) query;
+  getCounselor: (id: nat) -> (Counselor) query;
+  getMessages: (withPrincipal: principal) -> (vec ChatMessage) query;
+  getMyAssignment: () -> (opt nat) query;
+  getMyProfile: () -> (StudentProfile) query;
+  getMyReminder: () -> (CheckupReminder) query;
+  getUserProfile: (user: principal) -> (opt UserProfile) query;
+  getUserRole: () -> (UserRole) query;
+  initializeUser: () -> ();
+  listCounselors: () -> (vec Counselor) query;
+  registerStudent: (name: text, email: text) -> ();
+  removeCounselor: (id: nat) -> ();
+  saveCallerUserProfile: (profile: UserProfile) -> ();
+  seedSampleCounselors: () -> ();
+  sendMessage: (toPrincipal: principal, content: text) -> (nat);
+  setLastCheckup: (lastCheckupDate: int) -> ();
+  updateCounselor: (counselor: Counselor) -> ();
+}

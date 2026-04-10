@@ -41,7 +41,6 @@ export function Navbar({ page, navigate }: NavbarProps) {
               ["chat", "Chat"],
               ["ai-chat", "AI Chat"],
               ["admin", "Admin"],
-              ["project-report", "📄 Report"],
             ] as [Page, string][]
           ).map(([p, label]) => (
             <button

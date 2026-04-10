@@ -1,4 +1,3 @@
-import Iter "mo:core/Iter";
 import Map "mo:core/Map";
 import Nat "mo:core/Nat";
 import Order "mo:core/Order";
@@ -7,10 +6,14 @@ import Runtime "mo:core/Runtime";
 import Text "mo:core/Text";
 import Time "mo:base/Time";
 
-import MixinAuthorization "authorization/MixinAuthorization";
-import AccessControl "authorization/access-control";
-
 actor {
+  type UserRole = { #admin; #user; #guest };
+
+  type AccessControlState = {
+    var adminAssigned : Bool;
+    userRoles : Map.Map<Principal, UserRole>;
+  };
+
   type Counselor = {
     id : Nat;
     name : Text;
@@ -34,12 +37,6 @@ actor {
     assignedCounselorId : ?Nat;
   };
 
-  module StudentProfile {
-    public func compare(studentProfile1 : StudentProfile, studentProfile2 : StudentProfile) : Order.Order {
-      Principal.compare(studentProfile1.principal, studentProfile2.principal);
-    };
-  };
-
   type ChatMessage = {
     id : Nat;
     fromPrincipal : Principal;
@@ -60,12 +57,6 @@ actor {
     nextDueDate : Int;
   };
 
-  module CheckupReminder {
-    public func compare(checkupReminder1 : CheckupReminder, checkupReminder2 : CheckupReminder) : Order.Order {
-      Principal.compare(checkupReminder1.studentPrincipal, checkupReminder2.studentPrincipal);
-    };
-  };
-
   public type UserProfile = {
     name : Text;
     email : Text;
@@ -78,9 +69,11 @@ actor {
   let reminders = Map.empty<Principal, CheckupReminder>();
   let userProfiles = Map.empty<Principal, UserProfile>();
 
-  // Initialize the user system state
-  let accessControlState = AccessControl.initState();
-  include MixinAuthorization(accessControlState);
+  // Access control state (inline, no external package needed)
+  let accessControlState : AccessControlState = {
+    var adminAssigned = false;
+    userRoles = Map.empty<Principal, UserRole>();
+  };
 
   var nextCounselorId = 1;
   var nextMessageId = 1;
@@ -343,6 +336,22 @@ actor {
 
     // Default / general fallback
     "Thank you for sharing that with me. I want to make sure I understand what you're going through. Could you tell me a bit more? How long have you been feeling this way, and how is it affecting your daily life? I'm here to listen without judgment and work through this with you at your own pace.";
+  };
+
+  // Authorization endpoints (previously from MixinAuthorization)
+  public query ({ caller }) func getUserRole() : async UserRole {
+    if (caller.isAnonymous()) { return #guest };
+    switch (accessControlState.userRoles.get(caller)) {
+      case (?role) { role };
+      case null { #guest };
+    };
+  };
+
+  public shared ({ caller }) func assignRole(user : Principal, role : UserRole) : async () {
+    if (not callerIsAdmin(caller)) {
+      Runtime.trap("Unauthorized: Only admins can assign roles");
+    };
+    accessControlState.userRoles.add(user, role);
   };
 
   // Auto-register caller: first caller becomes admin, subsequent callers become users.
