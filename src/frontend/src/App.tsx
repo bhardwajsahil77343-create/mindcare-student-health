@@ -114,8 +114,8 @@ function Footer({ navigate }: { navigate: (p: Page) => void }) {
 
         <div className="border-t border-gray-700 mt-8 pt-6 flex flex-col md:flex-row items-center justify-between gap-2">
           <p className="text-xs text-gray-500">
-            &copy; 2025 MindCare &middot; Built by Alisha (2326268) &middot;
-            Modern Group of Colleges
+            &copy; 2025 MindCare &middot; Built by Team Alam 72 &middot; Modern
+            Group of Colleges
           </p>
           <p className="text-xs text-gray-600">
             Powered by Internet Computer Protocol
